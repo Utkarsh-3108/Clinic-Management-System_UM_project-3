@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinic Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Clinic Management System</h1>
+    <h2 align ="center">Login</h2>
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+    <button id="loginBtn">Login</button>
+    <hr>
+    <button id="signupRedirect">Create Account</button>
+  </div>
+
+  <script type="module">
+    import { auth, db } from './firebase.js';
+    import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+    import { doc, getDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+    // Login logic
+    document.getElementById('loginBtn').onclick = async () => {
+      console.log("INN");
+      const email = document.getElementById('email').value;
+      const pass = document.getElementById('password').value;
+      try {
+        const userCred = await signInWithEmailAndPassword(auth, email, pass);
+        const snap = await getDoc(doc(db, "users", userCred.user.uid));
+        if (snap.exists()) {
+          const role = snap.data().role;
+          if (role === "doctor") location.href = "doctor.html";
+          else if (role === "receptionist") location.href = "receptionist.html";
+          else location.href = "dashboard.html";
+        }
+      } catch (err) {
+        alert(err.message);
+      }
+    };
+
+    // Redirect to signup
+    document.getElementById('signupRedirect').onclick = () => {
+      window.location.href = "signup.html";
+    };
+  </script>
+</body>
+</html>

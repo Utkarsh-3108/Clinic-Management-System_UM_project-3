@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient History</title>
+  <link rel="stylesheet" href="history.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Patient History Details</h1>
+    
+    <div class="search-form">
+      <div class="input-group">
+       <h2><label align="center" for="searchName">Search Patient</label></h2>
+        <input id="searchName" placeholder="Enter patient name" />
+      </div>
+      <button id="searchBtn">Search</button>
+    </div>
+    
+    <div id="results"></div>
+  </div>
+
+  <script type="module">
+    import { db } from './firebase.js';
+    import { collection, getDocs, query, where } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+    document.getElementById('searchBtn').onclick = async () => {
+      const name = document.getElementById('searchName').value;
+      const q = query(collection(db, "patients"), where("name", "==", name));
+      const snap = await getDocs(q);
+      const results = document.getElementById('results');
+      results.innerHTML = "";
+      
+      if (snap.empty) {
+        results.innerHTML = `<div class="patient-card"><p>No patients found with that name.</p></div>`;
+        return;
+      }
+      
+      snap.forEach(docSnap => {
+        const data = docSnap.data();
+        results.innerHTML += `
+          <div class="patient-card">
+            <h3>${data.name} (${data.age})</h3>
+            <p>Token: ${data.token}</p>
+            <p>Status: ${data.status || 'N/A'}</p>
+            ${data.prescription ? `<div class="prescription"><strong>Prescription:</strong> ${data.prescription}</div>` : ''}
+          </div>
+        `;
+      });
+    };
+  </script>
+</body>
+</html>

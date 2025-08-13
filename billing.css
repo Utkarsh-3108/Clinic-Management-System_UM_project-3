@@ -1,0 +1,154 @@
+/* style.css */
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --secondary: #6b7280;
+  --success: #10b981;
+  --danger: #ef4444;
+  --light: #f9fafb;
+  --dark: #111827;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --input-gap: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: url(bill.jpg) no-repeat center fixed;
+  color: white;
+  line-height: 1.6;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+h1 {
+  color: var(--primary);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.input-row {
+  display: flex;
+  justify-content: center;
+  gap: var(--input-gap);
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.input-group {
+  width: 50%; /* Each input takes 50% width */
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+  background-color: white;
+  color: var(--dark);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+input::placeholder {
+  color: #9ca3af;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+button {
+  width: 50%;
+  padding: 14px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem;
+  }
+  
+  .input-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .input-group, button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+}

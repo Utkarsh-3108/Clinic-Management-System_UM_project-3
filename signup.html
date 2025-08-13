@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Clinic Management</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2 align ="center">Create Staff Account</h2>
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+    <label for="role">Role</label>
+    <select id="role">
+      <option value="doctor">Doctor</option>
+      <option value="receptionist">Receptionist</option>
+    </select>
+    <button id="signupBtn">Sign Up</button>
+  </div>
+
+  <script type="module">
+    import { auth, db } from './firebase.js';
+    import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+    import { doc, setDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+    document.getElementById('signupBtn').onclick = async () => {
+      const email = document.getElementById('email').value;
+      const pass = document.getElementById('password').value;
+      const role = document.getElementById('role').value;
+
+      try {
+        const userCred = await createUserWithEmailAndPassword(auth, email, pass);
+        await setDoc(doc(db, "users", userCred.user.uid), { role });
+        alert(`Account created for ${role}: ${email}`);
+      } catch (err) {
+        alert(err.message);
+      }
+    };
+  </script>
+</body>
+</html>
