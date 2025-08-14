@@ -21,9 +21,10 @@ A web-based Clinic Management System developed as part of the Unified Mentor Int
 
 ## Features
 
-- Patient registration and profile management
-- Appointment scheduling and management
-- Doctor and staff management
+- Patient registration and complaint about Symptoms.
+- Waiting Patients Records
+- Prescription details and patient history.
+- Doctor and Receptionist management
 - Medical records storage and retrieval
 - Billing and payment tracking
 - User authentication and authorization
@@ -32,18 +33,16 @@ A web-based Clinic Management System developed as part of the Unified Mentor Int
 ## Tech Stack
 
 - **Frontend:** HTML, CSS, JavaScript
-- **Backend:** (Please specify, e.g., Node.js, Python Flask/Django, PHP, etc.)
-- **Database:** (Please specify, e.g., MySQL, MongoDB, etc.)
+- **Database:** (*Firebase*) for Cloud Data storage [Firestore Database, Users Authentication and SDK.
 
 ## Getting Started
 
 ### Prerequisites
 
-- [Git](https://git-scm.com/)
-- [Node.js & npm](https://nodejs.org/) (if using Node.js)
-- Database server (e.g., MySQL, MongoDB)
+- HTML,CSS,Javascript
+- Database server (Firebase)
 
-### Installation
+### Installation and Working
 
 1. **Clone the repository:**
    ```bash
@@ -51,17 +50,14 @@ A web-based Clinic Management System developed as part of the Unified Mentor Int
    cd Clinic-Management-System_UM_project-3
    ```
 
-2. **Install dependencies:**
-   (Provide command here, e.g., `npm install`)
+2. **Run the application:**
+   (Download the zip file from my Github repoistory then extract it on Your device.)
+   (By using `vs.code` or any other text editor add file folder to your workspace.
+   (Click on `index.html` to open with live server to see the webpage and similarly open other *html files* to see other webpage)
+   (You can now use the project by Creating the Account on `login page`.
 
-3. **Configure environment variables:**
-   - Create a `.env` file and set up your database and other environment variables as required.
-
-4. **Run the application:**
-   (Provide command here, e.g., `npm start` or `python app.py`)
-
-5. **Access the application:**
-   - Open your browser and go to `http://localhost:3000` (or the specified port).
+4. **Access the application directly:**
+   - Open your browser and go to `http://127.0.0.1:5500/index.html` to see login page.
 
 ## Usage
 
