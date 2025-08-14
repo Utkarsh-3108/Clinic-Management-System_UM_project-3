@@ -33,16 +33,14 @@ A web-based Clinic Management System developed as part of the Unified Mentor Int
 ## Tech Stack
 
 - **Frontend:** HTML, CSS, JavaScript
-- **Database:** (*Firebase*) for Cloud Data storage [Firestore Database, Users Authentication and SDK.
+- **Database:** (*Firebase*) for Cloud Data storage [Firestore Database, Users Authentication and SDK]
 
-## Getting Started
-
-### Prerequisites
+## Prerequisites
 
 - HTML,CSS,Javascript
 - Database server (Firebase)
 
-### Installation and Working
+## Installation and Working
 
 1. **Clone the repository:**
    ```bash
@@ -51,10 +49,13 @@ A web-based Clinic Management System developed as part of the Unified Mentor Int
    ```
 
 2. **Run the application:**
-   (Download the zip file from my Github repoistory then extract it on Your device.)
-   (By using `vs.code` or any other text editor add file folder to your workspace.
-   (Click on `index.html` to open with live server to see the webpage and similarly open other *html files* to see other webpage)
-   (You can now use the project by Creating the Account on `login page`.
+  • (Download the zip file from my Github repoistory then extract it on Your device.)
+   
+  • (By using `vs.code` or any other text editor add file folder to your workspace.)
+
+  • (Click on `index.html` to open with live server to see the webpage and similarly open other *html files* to see other webpage.)
+
+  • (You can now use the project by Creating the Account on `login page`.)
 
 4. **Access the application directly:**
    - Open your browser and go to `http://127.0.0.1:5500/index.html` to see login page.
