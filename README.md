@@ -49,13 +49,14 @@ A web-based Clinic Management System developed as part of the Unified Mentor Int
    ```
 
 2. **Run the application:**
-  • (Download the zip file from my Github repoistory then extract it on Your device.)
    
-  • (By using `vs.code` or any other text editor add file folder to your workspace.)
+    • (Download the zip file from my Github repoistory then extract it on Your device.)
+   
+    • (By using `vs.code` or any other text editor add file folder to your workspace.)
 
-  • (Click on `index.html` to open with live server to see the webpage and similarly open other *html files* to see other webpage.)
+    • (Click on `index.html` to open with live server to see the webpage and similarly open other *html files* to see other webpage.)
 
-  • (You can now use the project by Creating the Account on `login page`.)
+    • (You can now use the project by Creating the Account on `login page`.)
 
 4. **Access the application directly:**
    - Open your browser and go to `http://127.0.0.1:5500/index.html` to see login page.
