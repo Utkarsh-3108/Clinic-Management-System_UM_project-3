@@ -63,7 +63,7 @@ A web-based Clinic Management System developed as part of the Unified Mentor Int
 3. **Firebase Setup**
 - Create a new Firebase project at [Firebase Console](https://console.firebase.google.com/)
 - Enable Authentication and Firestore Database
-- Update `firebase/config.js` with your Firebase configuration
+- Update `firebase.js` with your Firebase configuration
 - Sign Up and create your own database to use the Back-end services.
 
 ## Usage
