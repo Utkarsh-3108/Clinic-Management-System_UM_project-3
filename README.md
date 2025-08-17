@@ -66,9 +66,6 @@ A web-based Clinic Management System developed as part of the Unified Mentor Int
 - Update `firebase/config.js` with your Firebase configuration
 - Sign Up and create your own database to use the Back-end services.
 
-4. **Access the application directly:**
-   - Open your browser and go to `http://127.0.0.1:5500/index.html` to see login page.
-
 ## Usage
 
 - Register/login as a user or admin
