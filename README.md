@@ -33,7 +33,7 @@ A web-based Clinic Management System developed as part of the Unified Mentor Int
 ## Tech Stack
 
 - **Frontend:** HTML, CSS, JavaScript
-- **Database:** (*Firebase*) for Cloud Data storage [Firestore Database, Users Authentication and SDK]
+- **Backend & Database:** Firebase Authentication, Firestore Database, Firebase Hosting
 
 ## Prerequisites
 
@@ -59,6 +59,12 @@ A web-based Clinic Management System developed as part of the Unified Mentor Int
     • (You can now use the project by clicking on the option **Creating the Account** on `login page`).
 
     • (You can create account as a `Doctor` or as a `Receptionist`).
+
+3. **Firebase Setup**
+- Create a new Firebase project at [Firebase Console](https://console.firebase.google.com/)
+- Enable Authentication and Firestore Database
+- Update `firebase/config.js` with your Firebase configuration
+- Sign Up and create your own database to use the Back-end services.
 
 4. **Access the application directly:**
    - Open your browser and go to `http://127.0.0.1:5500/index.html` to see login page.
